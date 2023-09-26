@@ -28,10 +28,10 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: MyWidget(),
+      home: const MyWidget(),
     );
   }
 }
@@ -41,9 +41,18 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(children: [
-      Text('Hello, world!'),
-      Text('How are you?'),
-    ]);
+    return Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Thom Veldpaus',
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
+          Text(
+            'Experienced App Developer',
+            style: Theme.of(context).textTheme.headlineSmall,
+          )
+        ]);
   }
 }
