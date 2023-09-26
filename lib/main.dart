@@ -41,25 +41,56 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Icon(Icons.account_circle, size: 50),
+        Row(
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Icon(Icons.account_circle, size: 50),
+            ),
+            Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Thom Veldpaus',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                  Text(
+                    'Experienced App Developer',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  )
+                ]),
+          ],
         ),
-        Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Thom Veldpaus',
-                style: Theme.of(context).textTheme.headlineSmall,
-              ),
-              Text(
-                'Experienced App Developer',
-                style: Theme.of(context).textTheme.headlineSmall,
-              )
-            ]),
+        const SizedBox(
+          height: 8,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              "Dr Poletlaan 120, 5626 AA Eindhoven",
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+            Text(
+              "(415) 555-0198.",
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        const Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          Icon(Icons.accessibility),
+          Icon(Icons.timer),
+          Icon(Icons.phone_android),
+          Icon(Icons.phone_iphone),
+        ]),
       ],
     );
   }
