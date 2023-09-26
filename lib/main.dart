@@ -41,18 +41,26 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Thom Veldpaus',
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          Text(
-            'Experienced App Developer',
-            style: Theme.of(context).textTheme.headlineSmall,
-          )
-        ]);
+    return Row(
+      children: [
+        const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Icon(Icons.account_circle, size: 50),
+        ),
+        Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Thom Veldpaus',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              Text(
+                'Experienced App Developer',
+                style: Theme.of(context).textTheme.headlineSmall,
+              )
+            ]),
+      ],
+    );
   }
 }
